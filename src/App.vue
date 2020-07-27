@@ -1,6 +1,6 @@
 <template>
   <div class="app" :class="(mode === 'dark') ? 'dark' : ''">
-    <Header :mode="mode" />
+    <Header :mode="mode" @toggle="toggle"/>
   </div>
 </template>
 
@@ -11,11 +11,20 @@ export default {
   data () {
 
     return {
-      mode: 'dark'
+      mode: 'light'
     }
   },
   components: {
     Header
+  },
+  methods: {
+    toggle() {
+      if (this.mode === "dark") {
+        this.mode ="light"
+      } else {
+          this.mode = "dark"
+      }
+    }
   }
 }
 </script>

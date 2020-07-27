@@ -1,7 +1,7 @@
-import Header from '@/components/Header';
 <template>
 	<header>
 		<h1>{{ mode }} Mode</h1>
+		<Toogle :mode="mode" @toggle="$emit('toggle')" />
 		<nav>
 			<div class="nav-link">Home</div>
 			<div class="nav-link">About</div>
@@ -12,8 +12,12 @@ import Header from '@/components/Header';
 </template>
 
 <script>
+import Toogle from '@/components/Toggle';
 export default {
-	props:['mode']
+	props:['mode'],
+	components: {
+		Toogle
+	}
 }
 </script>
 
