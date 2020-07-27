@@ -1,11 +1,13 @@
 <template>
   <div class="app" :class="(mode === 'dark') ? 'dark' : ''">
     <Header :mode="mode" @toggle="toggle"/>
+    <Content :mode="mode" />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
+import Content from '@/components/Content';
 export default {
   name: 'App',
   data () {
@@ -15,9 +17,18 @@ export default {
     }
   },
   components: {
-    Header
+    Header,
+    Content
+  },
+  created () {
+    window.addEventListener('keyup', this.keyPress);
   },
   methods: {
+    keyPress (e) {
+        if(e.key === 't') {
+            this.toggle()
+        }
+    },
     toggle() {
       if (this.mode === "dark") {
         this.mode ="light"
@@ -43,11 +54,12 @@ export default {
   min-height: 100vh;
   background: #F3F3F3;
   color: #152028;
+  transition: background 0.3s ease-in-out;
 
 }
 .dark{
   background: #192734;
-  color: #F3F3F3;
+  color: #E8E8E8;
 }
 
 </style>
