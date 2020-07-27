@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app" :class="(mode === 'dark') ? 'dark' : ''">
+    <Header :mode="mode" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from '@/components/Header';
 export default {
   name: 'App',
+  data () {
+
+    return {
+      mode: 'dark'
+    }
+  },
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background: #F3F3F3;
+  color: #152028;
+
+}
+.dark{
+  background: #192734;
+  color: #F3F3F3;
+}
+
 </style>
