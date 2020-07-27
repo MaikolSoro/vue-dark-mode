@@ -3,7 +3,10 @@
 		<h1>{{ mode }} Mode</h1>
 		<Toogle :mode="mode" @toggle="$emit('toggle')" />
 		<nav>
-			<div class="nav-link">Home</div>
+			<div class="nav-link">
+				<router-link to="/home">Home</router-link>
+				
+			</div>
 			<div class="nav-link">About</div>
 			<div class="nav-link">Portfolio</div>
 			<div class="nav-link">Contact</div>
@@ -49,6 +52,7 @@ header {
 	display: flex;
 	align-items: center;
 	padding: 0px 15px;
+	text-decoration: none;
   }
   header nav .nav-link:hover {
 	background: #B0B0B0;

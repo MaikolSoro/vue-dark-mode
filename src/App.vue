@@ -2,6 +2,7 @@
   <div class="app" :class="(mode === 'dark') ? 'dark' : ''">
     <Header :mode="mode" @toggle="toggle"/>
     <Content :mode="mode" />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -35,8 +36,11 @@ export default {
       } else {
           this.mode = "dark"
       }
-    }
-  }
+    },
+  },
+  redirigir(){
+		this.$router.push('/home')
+	}
 }
 </script>
 
