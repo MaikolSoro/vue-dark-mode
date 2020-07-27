@@ -49,4 +49,7 @@ header {
   header nav .nav-link:hover {
 	background: #B0B0B0;
   }
+  .dark header nav .nav-link:hover {
+	background: #101520;
+  }
 </style>
