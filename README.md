@@ -1,4 +1,7 @@
 # vue-dark-mode
+   Website with vue.js in dark mode🌐🌞🌙
+  ## ✔ Technologies
+- [Vue.js Documentation](https://vuejs.org/)
 
 ## 🚀 Installation
    ## Prerequisites
